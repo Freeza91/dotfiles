@@ -1,0 +1,225 @@
+autocmd!
+set nocompatible
+
+" Respect modelines in files up to this number of lines
+set modeline
+
+let mapleader=";"
+let g:mapleader=";"
+
+" =============================================================================
+" Encoding and Locale
+" =============================================================================
+
+" file encode, 文件编码,格式
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gbk,gb18030,ucs-bom,cp936,big5,euc-jp,euc-kr,latin1
+set fileformats=unix,dos,mac
+" 处理consle输出乱码, use silent! prevent show error msg on some OS
+silent! language messages zh_CN.UTF-8
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+
+" 开启高亮语法显示
+syntax enable
+syntax on
+syntax sync minlines=50 maxlines=90
+set synmaxcol=300
+filetype plugin indent on
+set expandtab
+" Tab键的宽度
+set tabstop=2
+" 在行和段开始处使用制表符
+set smarttab
+" 使得按退格键时可以一次删掉 2 个空格
+set softtabstop=2
+" 用<>调整缩进时的长度缩进2格
+set shiftwidth=2
+" 复制之前缩进
+set copyindent
+" 自动缩进" always set autoindenting on
+set autoindent
+" 开启新行时使用智能自动缩进 "为C程序提供自动缩进
+set smartindent
+" 自动缩进
+set backspace=indent,eol,start
+set cindent
+
+" 带有如下符号的单词不要被换行分割
+set iskeyword+=_,$,@,%
+
+set formatoptions=tcrqn
+" 如遇Unicode值大于255的文本，不必等到空格再折行。
+set formatoptions+=m
+
+" 合并两行中文时，不在中间加空格：
+set formatoptions+=B
+" 匹配括号的规则，增加针对html的<>
+set matchpairs=(:),{:},[:],<:>
+" 当光标到达行尾或者行首时，继续移动转至下一行或者上一行 允许backspace和光标键跨越行边界
+set whichwrap=b,s,<,>,~,[,]
+
+set cursorline
+" set cursorcolumn
+
+set mouse=a
+
+" 设置字体
+set guifont=Monaco:h13
+
+" 显示行号
+set number
+" 行号栏的宽度
+set numberwidth=4
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable binary files
+set wildignore+=*.dll,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Ignore node modules
+set wildignore+=node_modules/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*,*.pyc
+
+set completeopt-=menu
+set completeopt+=longest,menuone
+
+""
+"" Search
+""
+" 输入搜索内容时就显示搜索结果
+set incsearch
+" 高亮被搜索的句子（phrases）
+set hlsearch
+" 搜索或者补全时忽略大小写
+set ignorecase
+" 有一个或以上大写字母时仍大小写敏感
+set smartcase
+" 禁止在搜索到文件两端时重新搜索
+set nowrapscan
+
+" {{{不要生成swap文件，当buffer被丢弃的时候隐藏它
+setlocal noswapfile
+" 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存
+set hidden  "隐藏buff非关闭它
+set bufhidden=hide
+" }}}
+" Jump to the first open window that contains the specified buffer
+set switchbuf=useopen
+" 设置当文件被外部改变的时候自动读入文件
+set autoread
+
+" 分割窗口时保持相等的宽/高
+" set equalalways
+" 竖直split时,在右边开启
+set splitright
+" 水平split时,在下边开启
+set splitbelow
+
+if has('clipboard')
+  if has('unnamedplus')  " When possible use + register for copy-paste
+      set clipboard=unnamed,unnamedplus
+  else         " On mac and Windows, use * register for copy-paste
+      set clipboard=unnamed
+  endif
+endif
+
+" Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
+" yanked stack (also, in visual mode)
+nnoremap <D-d>d "_d
+vnoremap <D-d>d "_d
+
+" 复制到公共剪切板
+vnoremap <D-c>y "+y
+
+" 剪切到公共剪切板
+vnoremap <D-x>x "+d
+nnoremap <D-x>x "+d
+
+" 粘贴时设置nopaste
+nnoremap <D-v>:set paste<cr> "+p :set nopaste<cr>
+nnoremap <D-v>:set paste<cr> "+P :set nopaste<cr>
+vnoremap <D-v>:set paste<cr> "+p :set nopaste<cr>
+vnoremap <D-v>:set paste<cr> "+P :set nopaste<cr>
+
+" 保存时自动移除行尾空格
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z`"
+endfunc
+autocmd  BufWrite * :call DeleteTrailingWS()
+
+"plugins 插件管理及配置
+"==========================================
+if filereadable(expand("~/.vim/vundle.vim"))
+  source ~/.vim/vundle.vim
+endif
+
+silent! colorscheme molokai
+hi Comment ctermfg=green guifg=green
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+end
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+   \ 'file': '\v\.(exe|so|dll)$',
+   \ 'link': 'some_bad_symbolic_links',
+   \ }
+" for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" NERD tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=20
+let NERDTreeShowHidden='\.gitignore'
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeQuitOnOpen=0
+let NERDTreeShowFiles=1
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Open a NERDTree
+nmap <F10> :NERDTreeToggle<cr>
+
+" indentLine
+set list listchars=tab:»·,trail:·
+" set list lcs=tab:\¦
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+let g:indentLine_enabled = 1
+
+" for ack
+cnoreabbrev Ack Ack!
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep' " 全局使用
+endif
+
+" for neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" for comments
+autocmd FileType apache setlocal commentstring=#\ %s

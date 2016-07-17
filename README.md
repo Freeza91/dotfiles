@@ -1,2 +1,2 @@
 # dotfiles
-this is my iterms settings!
+1. vim
