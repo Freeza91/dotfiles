@@ -24,7 +24,7 @@ Plugin 'bling/vim-airline'
 Plugin 'elzr/vim-json'
 " syntastic， 很多之前的项目全部报错了，没法玩了都
 " Plugin 'scrooloose/syntastic'
-Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'jelera/vim-javascript-syntax'
 " 代码自动补全
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'

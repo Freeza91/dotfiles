@@ -149,10 +149,7 @@ vnoremap <D-x>x "+d
 nnoremap <D-x>x "+d
 
 " 粘贴时设置nopaste
-nnoremap <D-v>:set paste<cr> "+p :set nopaste<cr>
-nnoremap <D-v>:set paste<cr> "+P :set nopaste<cr>
-vnoremap <D-v>:set paste<cr> "+p :set nopaste<cr>
-vnoremap <D-v>:set paste<cr> "+P :set nopaste<cr>
+" 使用 *p 最方便
 
 " 保存时自动移除行尾空格
 func! DeleteTrailingWS()
@@ -161,6 +158,8 @@ func! DeleteTrailingWS()
   exe "normal `z`"
 endfunc
 autocmd  BufWrite * :call DeleteTrailingWS()
+
+set title
 
 "plugins 插件管理及配置
 "==========================================
@@ -175,12 +174,10 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 end
 
+
 " ctrlp
-let g:ctrlp_custom_ignore = {
-   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-   \ 'file': '\v\.(exe|so|dll)$',
-   \ 'link': 'some_bad_symbolic_links',
-   \ }
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents)$'
+
 " for syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
