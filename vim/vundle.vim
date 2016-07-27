@@ -50,12 +50,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 " ack
 Plugin 'mileszs/ack.vim'
+Plugin 'dyng/ctrlsf.vim'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 " tpope/vim-commentary
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-surround'
+"vim-expand-region
+Plugin 'terryma/vim-expand-region'
+
 " language
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-rails'
