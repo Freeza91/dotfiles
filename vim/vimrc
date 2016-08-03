@@ -128,6 +128,12 @@ set splitright
 " 水平split时,在下边开启
 set splitbelow
 
+" conf for tabs, 为标签页进行的配置，通过ctrl h/l切换标签等
+let mapleader = ','
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+nnoremap <leader>t : tabe<CR>
+
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
       set clipboard=unnamed,unnamedplus
