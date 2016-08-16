@@ -169,6 +169,7 @@ set title
 
 " ESC
 inoremap jj <ESC>
+autocmd InsertLeave * write
 
 "plugins 插件管理及配置
 "==========================================
