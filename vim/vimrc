@@ -167,6 +167,9 @@ autocmd  BufWrite * :call DeleteTrailingWS()
 
 set title
 
+" ESC
+inoremap jj <ESC>
+
 "plugins 插件管理及配置
 "==========================================
 if filereadable(expand("~/.vim/vundle.vim"))
