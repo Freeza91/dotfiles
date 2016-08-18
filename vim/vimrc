@@ -26,6 +26,7 @@ syntax on
 syntax sync minlines=50 maxlines=90
 set synmaxcol=300
 filetype plugin indent on
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set expandtab
 " Tab键的宽度
 set tabstop=2
@@ -186,7 +187,7 @@ end
 
 
 " ctrlp
-let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|cache|log|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents|tmp|log)$'
 
 " for syntastic
 set statusline+=%#warningmsg#
@@ -246,3 +247,7 @@ function! Multiple_cursors_after()
     exe 'NeoCompleteUnlock'
   endif
 endfunction
+
+" vim
+autocmd BufNewFile,BufRead *.slim set filetype=slim
+
