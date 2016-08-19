@@ -26,7 +26,6 @@ syntax on
 syntax sync minlines=50 maxlines=90
 set synmaxcol=300
 filetype plugin indent on
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set expandtab
 " Tab键的宽度
 set tabstop=2
