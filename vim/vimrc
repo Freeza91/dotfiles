@@ -185,7 +185,7 @@ end
 
 
 " ctrlp
-let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|cache|log|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents|tmp|log)$'
 
 " for syntastic
 set statusline+=%#warningmsg#
@@ -285,3 +285,7 @@ endfunction
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+
+" slim enable vim
+autocmd BufNewFile,BufRead *.slim set filetype=slim
+
