@@ -129,7 +129,6 @@ set splitright
 set splitbelow
 
 " conf for tabs, 为标签页进行的配置，通过ctrl h/l切换标签等
-let mapleader = ','
 nnoremap <C-l> gt
 nnoremap <C-h> gT
 nnoremap <leader>t : tabe<CR>
@@ -246,3 +245,20 @@ function! Multiple_cursors_after()
     exe 'NeoCompleteUnlock'
   endif
 endfunction
+
+" for easymotion
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap ff <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+

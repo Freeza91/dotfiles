@@ -53,6 +53,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'dyng/ctrlsf.vim'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
+" incsearch.vim
+Plugin 'haya14busa/incsearch.vim'
+" incsearch-fuzzy.vim
+Plugin 'haya14busa/incsearch-fuzzy.vim'
 " tpope/vim-commentary
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/matchit.zip'
