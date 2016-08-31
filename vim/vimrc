@@ -4,8 +4,8 @@ set nocompatible
 " Respect modelines in files up to this number of lines
 set modeline
 
-let mapleader=";"
-let g:mapleader=";"
+let mapleader=","
+let g:mapleader=","
 
 " =============================================================================
 " Encoding and Locale
@@ -165,6 +165,13 @@ endfunc
 autocmd  BufWrite * :call DeleteTrailingWS()
 
 set title
+
+" 代码折叠
+set foldmethod=indent
+set foldlevelstart=99       " 打开文件是默认不折叠代码
+"用空格键来开关折叠
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " ESC
 inoremap jj <ESC>
