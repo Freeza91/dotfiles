@@ -61,6 +61,10 @@ set whichwrap=b,s,<,>,~,[,]
 
 set cursorline
 " set cursorcolumn
+" 显示列号
+set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+set laststatus=2
+set ruler
 
 set mouse=a
 
@@ -171,7 +175,6 @@ set foldmethod=indent
 set foldlevelstart=99       " 打开文件是默认不折叠代码
 "用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " ESC
 inoremap jj <ESC>
