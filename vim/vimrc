@@ -132,10 +132,17 @@ set splitright
 " 水平split时,在下边开启
 set splitbelow
 
-" conf for tabs, 为标签页进行的配置，通过ctrl h/l切换标签等
-nnoremap <C-l> gt
-nnoremap <C-h> gT
+" Tab切换
+vnoremap <C-Tab>l gt
+nnoremap <S-l> gt
+vnoremap <C-Tab>h gT
+nnoremap <S-h> gT
 nnoremap <leader>t : tabe<CR>
+" 分屏切换
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 if has('clipboard')
   if has('unnamedplus')  " When possible use + register for copy-paste
