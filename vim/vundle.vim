@@ -79,6 +79,8 @@ Plugin 'othree/html5.vim'
 
 " yml
 Plugin 'chase/vim-ansible-yaml'
+" html
+Plugin 'gregsexton/MatchTag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
