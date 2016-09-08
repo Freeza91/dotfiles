@@ -231,6 +231,7 @@ let g:indentLine_enabled = 1
 " for ack
 cnoreabbrev Ack Ack!
 cnoreabbrev ack Ack!
+cnoreabbrev ag Ag
 if executable('ag')
   let g:ackprg = 'ag --vimgrep' " 全局使用
 endif

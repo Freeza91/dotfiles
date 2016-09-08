@@ -51,6 +51,7 @@ Plugin 'ervandew/supertab'
 " ack
 Plugin 'mileszs/ack.vim'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'rking/ag.vim'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 " incsearch.vim
