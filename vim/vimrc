@@ -316,3 +316,10 @@ autocmd BufNewFile,BufRead *.slim set filetype=slim
 " for gundo
 nnoremap <Leader>ud :GundoToggle<CR>
 
+" fugitive
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>gp :Gpush<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
