@@ -64,6 +64,8 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-surround'
 "vim-expand-region
 Plugin 'terryma/vim-expand-region'
+"sjl/gundo.vim
+Plugin 'sjl/gundo.vim'
 
 " language
 Plugin 'davidhalter/jedi-vim'
