@@ -178,7 +178,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " ESC
 inoremap jj <ESC>
-autocmd InsertLeave * write
+au FocusLost * :wa
 
 "plugins 插件管理及配置
 "==========================================
