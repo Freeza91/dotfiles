@@ -244,17 +244,17 @@ if executable('ag')
 endif
 
 "for ctrlsf
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-nmap     <C-F>l <Plug>CtrlSFQuickfixPrompt
-vmap     <C-F>l <Plug>CtrlSFQuickfixVwordPath
-vmap     <C-F>L <Plug>CtrlSFQuickfixVwordExec
+nmap     <C-s>f <Plug>CtrlSFPrompt
+vmap     <C-s>f <Plug>CtrlSFVwordPath
+vmap     <C-s>F <Plug>CtrlSFVwordExec
+nmap     <C-s>n <Plug>CtrlSFCwordPath
+nmap     <C-s>p <Plug>CtrlSFPwordPath
+nnoremap <C-s>o :CtrlSFOpen<CR>
+nnoremap <C-s>t :CtrlSFToggle<CR>
+inoremap <C-s>t <Esc>:CtrlSFToggle<CR>
+nmap     <C-s>l <Plug>CtrlSFQuickfixPrompt
+vmap     <C-s>l <Plug>CtrlSFQuickfixVwordPath
+vmap     <C-s>L <Plug>CtrlSFQuickfixVwordExec
 
 " for neocomplete
 let g:neocomplete#enable_at_startup = 1
