@@ -1,6 +1,7 @@
 create or update
-`` shell
+
+``` shell
+
   cp -f ./tmux.conf ~/.tmux.conf
 
-``
-
+```
