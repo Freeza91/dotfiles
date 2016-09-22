@@ -25,18 +25,16 @@ Plugin 'elzr/vim-json'
 " syntastic， 很多之前的项目全部报错了，没法玩了都
 " Plugin 'scrooloose/syntastic'
 " Plugin 'jelera/vim-javascript-syntax'
-
-" 自动补全
-" Plugin 'Shougo/neocomplete.vim' " 不需要配置
-Plugin 'Valloric/YouCompleteMe'
-" Optional:
+" 代码自动补全
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+" Optional:
 Plugin 'mattn/emmet-vim'
 Plugin 'honza/vim-snippets'
+" 自动补全
 Plugin 'spf13/spf13-vim'
-
+Plugin 'Shougo/neocomplete.vim'
 " 可视化缩进
 Plugin 'Yggdroot/indentLine'
 " 多光标
@@ -89,4 +87,3 @@ Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-
