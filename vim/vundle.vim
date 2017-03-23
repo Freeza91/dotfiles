@@ -84,6 +84,9 @@ Plugin 'gregsexton/MatchTag'
 " fugitive
 Plugin 'tpope/vim-fugitive'
 
+" splitjoin
+Plugin 'AndrewRadev/splitjoin.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
