@@ -188,6 +188,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 inoremap jj <ESC>
 au FocusLost * :wa
 au InsertLeave *.* write
+au CursorHoldI *.* write
 
 "plugins 插件管理及配置
 "==========================================
