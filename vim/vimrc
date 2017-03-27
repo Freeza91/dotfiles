@@ -175,6 +175,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd  BufWrite * :call DeleteTrailingWS()
 
+
 set title
 
 " 代码折叠
@@ -186,6 +187,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " ESC
 inoremap jj <ESC>
 au FocusLost * :wa
+au InsertLeave *.* write
 
 "plugins 插件管理及配置
 "==========================================
