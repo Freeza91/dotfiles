@@ -79,8 +79,6 @@ Plugin 'othree/html5.vim'
 
 " yml
 Plugin 'chase/vim-ansible-yaml'
-" html
-Plugin 'gregsexton/MatchTag'
 " fugitive
 Plugin 'tpope/vim-fugitive'
 
