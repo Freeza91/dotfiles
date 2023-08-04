@@ -207,16 +207,6 @@ end
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|cache|log|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents|tmp|log)$'
 
-" for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " NERD tree
 let NERDChristmasTree=0
 let NERDTreeWinSize=20
@@ -356,3 +346,5 @@ let g:indentLine_color_gui = '#ffffff'
 let g:indentLine_color_tty_dark = 1
 let g:indentLine_color_tty_light = 7
 let g:indentLine_bufNameExclude = ['NERD_tree.*']
+
+let g:snipMate = { 'snippet_version' : 1 }

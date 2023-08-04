@@ -22,9 +22,6 @@ Plugin 'vim-scripts/jsbeautify'
 Plugin 'bling/vim-airline'
 " json
 Plugin 'elzr/vim-json'
-" syntastic， 很多之前的项目全部报错了，没法玩了都
-" Plugin 'scrooloose/syntastic'
-" Plugin 'jelera/vim-javascript-syntax'
 " 代码自动补全
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -72,7 +69,6 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-markdown'
-Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'othree/html5.vim'
